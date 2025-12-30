@@ -1,301 +1,590 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ABOGADOSPERU.HOME | Estudio Jurídico</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ABOGADOSPERU.HOME | Estudio Jurídico</title>
+  <meta name="description" content="Estudio jurídico con enfoque estratégico, comunicación clara y defensa eficaz."/>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root{
-  --beige:#f7f2ea;
-  --beige2:#efe6da;
-  --dark:#121212;
-  --green:#0f2a2d;
-  --gold:#c8a25a;
-  --white:#ffffff;
-}
+  <style>
+    :root{
+      --nude:#f7f2ea;
+      --nude2:#efe6da;
+      --paper:#ffffff;
+      --ink:#121212;
+      --muted:#5e564f;
+      --line:rgba(18,18,18,.12);
+      --shadow:0 18px 55px rgba(18,18,18,.10);
+      --shadow2:0 10px 25px rgba(18,18,18,.08);
+      --radius:22px;
+      --max:1120px;
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter, sans-serif;
-  background:var(--beige);
-  color:var(--dark);
-}
+      --deep:#0f2a2d;  /* verde oscuro elegante */
+      --gold:#c8a25a;  /* dorado suave */
+      --wa:#25D366;
+    }
 
-a{text-decoration:none;color:inherit}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--nude);
+      color:var(--ink);
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
-header{
-  position:sticky;
-  top:0;
-  background:rgba(247,242,234,.95);
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid rgba(0,0,0,.1);
-  z-index:100;
-}
+    /* TOPBAR */
+    .topbar{
+      background:var(--deep);
+      color:rgba(255,255,255,.9);
+      font-size:13px;
+      padding:10px 0;
+    }
+    .topbar .row{
+      display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap
+    }
+    .topbar .item{display:flex;gap:8px;align-items:center;opacity:.95}
+    .topbar .dot{opacity:.45}
 
-.nav{
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 20px;
-}
+    /* NAV */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(247,242,234,.90);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;padding:14px 0;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+      font-family:"Playfair Display",serif;
+      font-weight:700;letter-spacing:.4px;
+    }
+    .logo{
+      height:46px;width:auto;object-fit:contain;display:block;
+      border-radius:10px;
+    }
+    .brand-text{font-size:22px}
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-family:"Playfair Display", serif;
-  font-size:22px;
-}
+    .menu{
+      display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+      font-size:14px;
+    }
+    .menu a{
+      padding:8px 12px;border-radius:999px;
+      color:rgba(18,18,18,.86);
+      transition:.18s ease;
+      cursor:pointer;
+    }
+    .menu a:hover{background:rgba(18,18,18,.06)}
+    .menu a.active{background:rgba(18,18,18,.10);font-weight:600}
 
-.brand img{
-  height:46px;
-}
+    .cta{
+      display:flex;gap:10px;align-items:center;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 18px;border-radius:999px;
+      border:1px solid rgba(18,18,18,.16);
+      background:var(--paper);
+      font-weight:700;font-size:14px;
+      box-shadow:0 10px 25px rgba(18,18,18,.08);
+      transition:.18s ease;
+      cursor:pointer;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-gold{
+      border-color:rgba(200,162,90,.55);
+      background:linear-gradient(180deg, rgba(200,162,90,1), rgba(160,120,50,1));
+      color:#fff;
+      box-shadow:0 16px 45px rgba(18,18,18,.18);
+    }
+    .btn-gold:hover{
+      transform:translateY(-2px);
+      box-shadow:0 22px 55px rgba(18,18,18,.22);
+    }
 
-.menu{
-  display:flex;
-  gap:22px;
-  font-size:14px;
-}
+    /* SECCIONES: solo 1 visible */
+    .page-section{display:none}
+    .page-section.active{display:block}
 
-.menu a{
-  padding:8px 12px;
-  border-radius:999px;
-}
+    /* HERO (INICIO) */
+    .hero-wrap{padding:26px 0 30px}
+    .hero{
+      position:relative;border-radius:28px;overflow:hidden;
+      box-shadow:var(--shadow);
+      min-height:78vh;
+      border:1px solid rgba(255,255,255,.12);
+      background:#111;
+    }
+    .hero-bg{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(0deg, rgba(0,0,0,.74), rgba(0,0,0,.42)),
+        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=2000&q=80");
+      background-size:cover;
+      background-position:right center; /* evita choque con texto */
+      transform:scale(1.02);
+    }
+    .hero-content{
+      position:relative;
+      padding:56px 52px;
+      max-width:600px;
+      color:#fff;
+    }
+    .hero-kicker{
+      font-size:13px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      opacity:.9;
+      margin-bottom:14px;
+    }
+    .hero h1{
+      font-family:"Playfair Display",serif;
+      font-size:62px;
+      line-height:1.03;
+      margin:0 0 18px;
+    }
+    .hero p{
+      margin:0 0 22px;
+      line-height:1.7;
+      color:rgba(255,255,255,.88);
+      max-width:520px;
+    }
 
-.menu a:hover,
-.menu a.active{
-  background:rgba(0,0,0,.08);
-}
+    /* 3 BLOQUES */
+    .pillars{
+      margin-top:26px;
+    }
+    .pillars-box{
+      background:var(--deep);
+      border-radius:22px;
+      box-shadow:var(--shadow2);
+      overflow:hidden;
+    }
+    .pillars-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+    }
+    .pillar{
+      padding:26px 22px;
+      border-right:1px solid rgba(255,255,255,.12);
+      color:#fff;
+    }
+    .pillar:last-child{border-right:none}
+    .icon{
+      width:42px;height:42px;border-radius:12px;
+      background:rgba(255,255,255,.10);
+      display:grid;place-items:center;
+      font-size:20px;color:#b6d7dd;
+      margin-bottom:10px;
+    }
+    .pillar h3{
+      font-family:"Playfair Display",serif;
+      margin:0 0 8px;font-size:22px;
+    }
+    .pillar p{
+      margin:0;line-height:1.7;
+      color:rgba(255,255,255,.82);
+      font-size:14px;
+    }
 
-.section{
-  display:none;
-}
+    /* SECCIÓN BASE */
+    .section{
+      padding:74px 0;
+    }
+    .section h2{
+      font-family:"Playfair Display",serif;
+      font-size:40px;margin:0 0 10px;
+    }
+    .section .lead{
+      margin:0;color:var(--muted);line-height:1.7;
+      max-width:780px;
+    }
 
-.section.active{
-  display:block;
-}
+    /* SERVICIOS: fondo biblioteca desenfocada */
+    .services-bg{
+      background:
+        linear-gradient(0deg, rgba(247,242,234,.93), rgba(247,242,234,.93)),
+        url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=2000&q=80");
+      background-size:cover;
+      background-position:center;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
 
-/* HERO */
-.hero{
-  min-height:90vh;
-  background:
-  linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.4)),
-  url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=2000&q=80");
-  background-size:cover;
-  background-position:center;
-  color:white;
-  padding:80px 20px;
-}
+    .grid{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+    .card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow2);
+      padding:22px;
+    }
+    .service{
+      text-align:center;
+      padding:22px;
+    }
+    .service-icon{
+      width:64px;height:64px;border-radius:18px;
+      display:grid;place-items:center;
+      margin:0 auto 14px;
+      background:rgba(15,42,45,.08);
+      color:var(--deep);
+      font-size:28px;
+      border:1px solid rgba(18,18,18,.10);
+    }
+    .service h3{
+      font-family:"Playfair Display",serif;
+      margin:0 0 8px;font-size:20px;
+    }
+    .service p{
+      margin:0;color:var(--muted);line-height:1.7;
+      font-size:14px;
+    }
 
-.hero-content{
-  max-width:600px;
-}
+    /* CONTACTO: fondo mármol/despacho */
+    .contact-bg{
+      background:
+        linear-gradient(0deg, rgba(247,242,234,.92), rgba(247,242,234,.92)),
+        url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2000&q=80");
+      background-size:cover;
+      background-position:center;
+      border-top:1px solid var(--line);
+    }
+    .contact-grid{
+      margin-top:24px;
+      display:grid;
+      grid-template-columns:1fr 1.1fr;
+      gap:14px;
+    }
+    .contact-left{
+      background:linear-gradient(180deg, var(--nude2), #fff);
+    }
+    .contact-left h3{
+      font-family:"Playfair Display",serif;
+      margin:0 0 8px;font-size:24px;
+    }
+    .contact-left p{
+      margin:0 0 14px;color:var(--muted);line-height:1.7;
+    }
+    .contact-item{
+      display:grid;
+      grid-template-columns:46px 1fr;
+      gap:14px;
+      padding:16px 0;
+      border-top:1px solid var(--line);
+      align-items:center;
+    }
+    .contact-item:first-of-type{border-top:none}
+    .contact-item b{display:block}
+    .contact-item span{color:var(--muted);font-size:14px}
+    .form{
+      display:grid;gap:14px;
+    }
+    input, textarea, select{
+      width:100%;
+      border:none;
+      border-bottom:1px solid rgba(18,18,18,.22);
+      background:transparent;
+      padding:10px 2px;
+      outline:none;
+      font-size:14px;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    textarea{min-height:120px;resize:vertical}
+    .send{
+      justify-self:start;
+      border:none;
+      background:var(--deep);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:12px;
+      font-weight:800;
+      cursor:pointer;
+    }
 
-.hero h1{
-  font-family:"Playfair Display", serif;
-  font-size:64px;
-  line-height:1.05;
-}
+    /* FOOTER */
+    footer{
+      border-top:1px solid var(--line);
+      padding:20px 0;
+      color:var(--muted);
+      font-size:14px;
+      background:rgba(247,242,234,.6);
+    }
 
-.hero p{
-  font-size:16px;
-  line-height:1.7;
-}
+    /* WhatsApp flotante */
+    .whatsapp{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:56px;height:56px;
+      border-radius:999px;
+      background:var(--wa);
+      color:#fff;
+      display:grid;place-items:center;
+      box-shadow:var(--shadow);
+      font-size:22px;
+      z-index:120;
+    }
+    .whatsapp:active{transform:scale(.98)}
 
-.btn{
-  margin-top:20px;
-  display:inline-block;
-  padding:12px 22px;
-  border-radius:999px;
-  background:var(--white);
-  color:var(--dark);
-  font-weight:600;
-}
-
-.pillars{
-  background:var(--green);
-  color:white;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-}
-
-.pillar{
-  padding:28px;
-  border-right:1px solid rgba(255,255,255,.15);
-}
-
-.pillar:last-child{border-right:none}
-
-.pillar h3{
-  font-family:"Playfair Display", serif;
-}
-
-/* SERVICIOS */
-.services{
-  max-width:1200px;
-  margin:auto;
-  padding:80px 20px;
-}
-
-.services h2{
-  text-align:center;
-  font-family:"Playfair Display", serif;
-  font-size:40px;
-}
-
-.grid{
-  margin-top:50px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
-}
-
-.card{
-  background:white;
-  padding:28px;
-  border-radius:18px;
-  box-shadow:0 15px 40px rgba(0,0,0,.1);
-}
-
-.card h3{
-  font-family:"Playfair Display", serif;
-}
-
-/* CONTACTO */
-.contact{
-  max-width:1100px;
-  margin:auto;
-  padding:80px 20px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-}
-
-.contact-card{
-  background:white;
-  padding:36px;
-  border-radius:22px;
-  box-shadow:0 15px 40px rgba(0,0,0,.1);
-}
-
-.contact h2{
-  font-family:"Playfair Display", serif;
-}
-
-input, textarea{
-  width:100%;
-  border:none;
-  border-bottom:1px solid rgba(0,0,0,.3);
-  padding:12px;
-  margin-bottom:20px;
-  font-size:14px;
-}
-
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:14px 18px;
-  border-radius:999px;
-  font-weight:600;
-}
-</style>
+    @media (max-width:980px){
+      .menu{display:none}
+      .hero-content{padding:44px 26px}
+      .hero h1{font-size:44px}
+      .pillars-grid{grid-template-columns:1fr}
+      .pillar{border-right:none;border-bottom:1px solid rgba(255,255,255,.12)}
+      .pillar:last-child{border-bottom:none}
+      .grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="nav">
-    <div class="brand">
-      <img src="logo.png">
-      ABOGADOSPERU.HOME
-    </div>
-    <nav class="menu">
-      <a href="#" class="active" onclick="showSection('inicio',this)">Inicio</a>
-      <a href="#" onclick="showSection('servicios',this)">Servicios</a>
-      <a href="#" onclick="showSection('contacto',this)">Contacto</a>
-    </nav>
-  </div>
-</header>
-
-<section id="inicio" class="section active">
-  <div class="hero">
-    <div class="hero-content">
-      <h1>Tu tranquilidad legal comienza aquí.</h1>
-      <p>Brindamos asesoría legal con visión estratégica, comunicación clara y defensa responsable para personas, familias y empresas.</p>
-      <a class="btn">Solicitar asesoría</a>
+  <div class="topbar">
+    <div class="container row">
+      <div class="item">📞 <span>Tel/WhatsApp: (por definir)</span></div>
+      <span class="dot">•</span>
+      <div class="item">✉️ <span>Correo: (por definir)</span></div>
+      <span class="dot">•</span>
+      <div class="item">📍 <span>Lima – Perú</span></div>
     </div>
   </div>
 
-  <div class="pillars">
-    <div class="pillar">
-      <h3>Análisis legal</h3>
-      <p>Evaluamos cada caso con rigor jurídico y criterio estratégico.</p>
-    </div>
-    <div class="pillar">
-      <h3>Estrategia clara</h3>
-      <p>Diseñamos planes legales por etapas, con objetivos definidos.</p>
-    </div>
-    <div class="pillar">
-      <h3>Defensa eficaz</h3>
-      <p>Representación técnica y responsable en cada instancia.</p>
-    </div>
-  </div>
-</section>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="./logo.png" alt="ABOGADOSPERU.HOME" class="logo">
+        <span class="brand-text">ABOGADOSPERU.HOME</span>
+      </div>
 
-<section id="servicios" class="section">
-  <div class="services">
-    <h2>Áreas de práctica legal</h2>
-    <div class="grid">
-      <div class="card"><h3>Derecho de Familia</h3><p>Divorcios, tenencia, alimentos y procesos familiares.</p></div>
-      <div class="card"><h3>Derecho Civil</h3><p>Contratos, obligaciones y responsabilidad civil.</p></div>
-      <div class="card"><h3>Derecho Penal</h3><p>Defensa y representación en procesos penales.</p></div>
-      <div class="card"><h3>Derecho Mercantil y Corporativo</h3><p>Asesoría legal a empresas y emprendedores.</p></div>
-      <div class="card"><h3>Derecho con el Estado</h3><p>Contrataciones, procedimientos administrativos.</p></div>
-      <div class="card"><h3>Derecho Procesal</h3><p>Estrategia y conducción de procesos judiciales.</p></div>
+      <nav class="menu">
+        <a class="navlink active" data-target="inicio">Inicio</a>
+        <a class="navlink" data-target="sobre">Sobre nosotros</a>
+        <a class="navlink" data-target="servicios">Servicios</a>
+        <a class="navlink" data-target="contacto">Contacto</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn btn-gold" id="ctaAsesoria">Solicitar asesoría</a>
+      </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="contacto" class="section">
-  <div class="contact">
-    <div class="contact-card">
-      <h2>¿Necesita asesoría legal?</h2>
-      <p>Analizamos su caso con confidencialidad y criterio profesional.</p>
-      <p><strong>Teléfono / WhatsApp:</strong> (por definir)</p>
-      <p><strong>Correo:</strong> (por definir)</p>
-      <p><strong>Ubicación:</strong> Lima – Perú</p>
-    </div>
+  <main>
 
-    <div class="contact-card">
-      <h2>Envíenos un mensaje</h2>
-      <input placeholder="Nombre">
-      <input placeholder="Correo electrónico">
-      <input placeholder="Servicio">
-      <textarea placeholder="Mensaje"></textarea>
-      <a class="btn">Enviar</a>
-    </div>
-  </div>
-</section>
+    <!-- INICIO -->
+    <section id="inicio" class="page-section active">
+      <div class="container hero-wrap">
+        <div class="hero">
+          <div class="hero-bg"></div>
+          <div class="hero-content">
+            <div class="hero-kicker">Bienvenido(a) a nuestro estudio jurídico</div>
+            <h1>Tu tranquilidad legal comienza aquí.</h1>
+            <p>Brindamos asesoría legal con visión estratégica, comunicación clara y defensa responsable, orientada a proteger los intereses de personas, familias y empresas.</p>
+            <a class="btn btn-gold" id="btnHero">Solicitar asesoría</a>
+          </div>
+        </div>
 
-<a class="whatsapp">WhatsApp</a>
+        <div class="pillars">
+          <div class="pillars-box">
+            <div class="pillars-grid">
+              <div class="pillar">
+                <div class="icon">⚖️</div>
+                <h3>Análisis legal</h3>
+                <p>Evaluamos cada caso con rigor jurídico y criterio estratégico desde el inicio.</p>
+              </div>
+              <div class="pillar">
+                <div class="icon">📘</div>
+                <h3>Estrategia clara</h3>
+                <p>Diseñamos planes legales por etapas, con objetivos definidos y comunicación transparente.</p>
+              </div>
+              <div class="pillar">
+                <div class="icon">🛡️</div>
+                <h3>Defensa eficaz</h3>
+                <p>Representación responsable y técnica en cada instancia, con enfoque en resultados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<script>
-function showSection(id,el){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  document.querySelectorAll('.menu a').forEach(a=>a.classList.remove('active'));
-  el.classList.add('active');
-}
-</script>
+      </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section id="sobre" class="page-section">
+      <div class="container section">
+        <h2>Sobre nosotros</h2>
+        <p class="lead">Contamos con un estudio jurídico orientado a brindar soluciones legales claras, responsables y estratégicas para personas, familias y empresas.</p>
+
+        <div class="grid" style="margin-top:22px">
+          <div class="card">
+            <p style="margin:0;line-height:1.75;color:var(--muted)">
+              Te acompañamos desde la asesoría inicial hasta la representación en juicio, con atención personalizada, ética y enfoque en resultados.
+            </p>
+          </div>
+          <div class="card">
+            <p style="margin:0;line-height:1.75;color:var(--muted)">
+              Priorizamos la claridad en la información, el orden procesal y la comunicación directa en cada etapa de tu caso.
+            </p>
+          </div>
+          <div class="card">
+            <p style="margin:0;line-height:1.75;color:var(--muted)">
+              Nuestro compromiso es brindar un servicio serio, confidencial y técnicamente sólido, acorde a tus necesidades.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="page-section services-bg">
+      <div class="container section">
+        <h2>Áreas de práctica legal</h2>
+        <p class="lead">Soluciones jurídicas con criterio profesional, comunicación clara y acompañamiento responsable.</p>
+
+        <div class="grid">
+          <div class="card service">
+            <div class="service-icon">👨‍👩‍👧</div>
+            <h3>Derecho de Familia</h3>
+            <p>Divorcio, alimentos, tenencia, régimen de visitas y procesos familiares.</p>
+          </div>
+
+          <div class="card service">
+            <div class="service-icon">🏛️</div>
+            <h3>Derecho Civil</h3>
+            <p>Contratos, obligaciones, propiedad, sucesiones y responsabilidad civil.</p>
+          </div>
+
+          <div class="card service">
+            <div class="service-icon">🚨</div>
+            <h3>Derecho Penal</h3>
+            <p>Defensa y representación en procesos penales, con enfoque técnico y confidencial.</p>
+          </div>
+
+          <div class="card service">
+            <div class="service-icon">🏢</div>
+            <h3>Mercantil y Corporativo</h3>
+            <p>Asesoría a empresas, contratos comerciales y soporte legal estratégico.</p>
+          </div>
+
+          <div class="card service">
+            <div class="service-icon">🧾</div>
+            <h3>Derecho con el Estado</h3>
+            <p>Procedimientos administrativos, contrataciones públicas y controversias.</p>
+          </div>
+
+          <div class="card service">
+            <div class="service-icon">📑</div>
+            <h3>Derecho Procesal</h3>
+            <p>Estrategia y conducción de procesos judiciales, plazos y actuaciones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="page-section contact-bg">
+      <div class="container section">
+        <h2>Contacto</h2>
+        <p class="lead">Comparta su consulta y un miembro del estudio se comunicará con usted a la brevedad.</p>
+
+        <div class="contact-grid">
+          <div class="card contact-left">
+            <h3>¿Necesita asesoría legal?</h3>
+            <p>Analizamos su caso con confidencialidad y criterio profesional, ofreciendo orientación clara y acompañamiento responsable.</p>
+
+            <div class="contact-item">
+              <div class="icon">📞</div>
+              <div><b>Teléfono / WhatsApp</b><span>(por definir)</span></div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon">✉️</div>
+              <div><b>Correo electrónico</b><span>(por definir)</span></div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon">📍</div>
+              <div><b>Ubicación</b><span>Lima – Perú</span></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <form class="form" onsubmit="event.preventDefault(); alert('Mensaje enviado (demo). Luego lo conectamos a correo o WhatsApp).');">
+              <input placeholder="Nombre completo" required>
+              <input type="email" placeholder="Correo electrónico" required>
+              <select required>
+                <option value="">Seleccione un servicio</option>
+                <option>Derecho de Familia</option>
+                <option>Derecho Civil</option>
+                <option>Derecho Penal</option>
+                <option>Mercantil y Corporativo</option>
+                <option>Derecho con el Estado</option>
+                <option>Derecho Procesal</option>
+              </select>
+              <textarea placeholder="Mensaje" required></textarea>
+              <button class="send" type="submit">Enviar consulta</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">© <span id="y"></span> ABOGADOSPERU.HOME</div>
+    </footer>
+
+  </main>
+
+  <!-- WhatsApp flotante (pon tu número real después de 51) -->
+  <a class="whatsapp" href="https://wa.me/51999999999" target="_blank" rel="noopener">💬</a>
+
+  <script>
+    // Año footer
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Navegación: una sección a la vez
+    const links = document.querySelectorAll(".navlink");
+    const sections = document.querySelectorAll(".page-section");
+
+    function activate(id){
+      sections.forEach(s => s.classList.remove("active"));
+      const target = document.getElementById(id);
+      if(target) target.classList.add("active");
+
+      links.forEach(a => a.classList.remove("active"));
+      links.forEach(a => { if(a.dataset.target === id) a.classList.add("active"); });
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    links.forEach(a=>{
+      a.addEventListener("click", ()=>activate(a.dataset.target));
+    });
+
+    // Botones "Solicitar asesoría" llevan a Contacto
+    document.getElementById("ctaAsesoria").addEventListener("click", ()=>activate("contacto"));
+    document.getElementById("btnHero").addEventListener("click", ()=>activate("contacto"));
+  </script>
 
 </body>
 </html>
