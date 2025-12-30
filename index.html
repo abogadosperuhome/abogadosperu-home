@@ -870,11 +870,42 @@
     document.getElementById("ctaAsesoria").addEventListener("click", () => activate("contacto"));
     document.getElementById("ctaServicios").addEventListener("click", () => activate("servicios"));
 
+  window.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formContacto");
-  const box = document.getElementById("formBox");
+  const modal = document.getElementById("successModal");
 
-  form.addEventListener("submit", async function (e) {
+  // Si no encuentra el form o el modal, no hace nada (evita errores)
+  if (!form || !modal) return;
+
+  // Para que el botón "Cerrar" funcione desde el HTML onclick=""
+  window.closeSuccess = function () {
+    modal.style.display = "none";
+  };
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    try {
+      const data = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: form.method || "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      });
+
+      if (response.ok) {
+        modal.style.display = "flex";
+        form.reset();
+      } else {
+        alert("No se pudo enviar el formulario. Revisa los campos e inténtalo de nuevo.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Error de conexión. Inténtalo nuevamente.");
+    }
+  });
+});
 
     const data = new FormData(form);
 
@@ -895,5 +926,41 @@
   document.getElementById("successModal").classList.remove("active");
 });
   </script>
+  <script>
+window.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formContacto");
+  const modal = document.getElementById("successModal");
+  const closeBtn = document.getElementById("closeModal");
+
+if (!form || !modal || !closeBtn) return;
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+  });
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    try {
+      const data = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: data,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (response.ok) {
+        modal.classList.add("active");
+        form.reset();
+      } else {
+        alert("No se pudo enviar el formulario. Inténtalo nuevamente.");
+      }
+    } catch (err) {
+      alert("Error de conexión. Inténtalo nuevamente.");
+    }
+  });
+});
+</script>
 </body>
 </html>
