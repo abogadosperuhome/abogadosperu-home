@@ -428,6 +428,67 @@
     }
   </style>
 </head>
+<style>
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  z-index: 9999;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  background: #f8fdf9;
+  padding: 28px 32px;
+  border-radius: 16px;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,.2);
+  transform: translateY(20px);
+  transition: transform .3s ease;
+}
+
+.modal-overlay.active .modal-box {
+  transform: translateY(0);
+}
+
+.modal-box h3 {
+  margin-top: 0;
+  color: #1b5e20;
+}
+
+.modal-box p {
+  color: #2e4d34;
+  line-height: 1.6;
+}
+
+.whatsapp-text {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #1b5e20;
+}
+
+.modal-box button {
+  margin-top: 18px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #c9a24d;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+</style>
 
 <body>
   <div class="topbar">
@@ -710,30 +771,53 @@
               <div class="send">
                 <button type="submit">Enviar</button>
 
-<div id="formBox" style="
-  display:none;
-  margin-top:22px;
-  padding:22px 24px;
-  border-radius:16px;
-  background:linear-gradient(180deg,#f8fdf9,#eef7f1);
-  border:1px solid rgba(46,125,50,.25);
-  box-shadow:0 12px 30px rgba(0,0,0,.08);
-  text-align:center;
-">
-  <h4 style="margin:0 0 10px; color:#1b5e20;">
-    ✉️ Mensaje enviado con éxito
-  </h4>
-  <p style="margin:0 0 10px; color:#2f3e34; line-height:1.6;">
-    Gracias por contactarnos. Hemos recibido tu consulta y uno de nuestros
-    abogados se comunicará contigo a la brevedad.
-  </p>
-  <p style="margin:0; color:#1b5e20; font-weight:600;">
-    📲 También puedes escribirnos directamente por WhatsApp si deseas una atención inmediata.
-  </p>
-</div>
 
               </div>
             </form>
+
+<!-- MENSAJE FLOTÁNTE DE CONFIRMACIÓN -->
+<div id="formBox" style="
+  display:none;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  z-index:9999;
+  max-width:420px;
+  width:90%;
+  padding:24px 22px;
+  border-radius:16px;
+  background:#f6fff9;
+  border:1px solid #b7e4c7;
+  box-shadow:0 20px 50px rgba(0,0,0,.15);
+  text-align:center;
+">
+  <h3 style="margin:0 0 10px;color:#1b5e20;">
+    ✅ Mensaje enviado con éxito
+  </h3>
+
+  <p style="margin:0 0 12px;color:#2f3e34;line-height:1.5;">
+    Gracias por contactarnos. Hemos recibido tu consulta y uno de nuestros
+    abogados se comunicará contigo a la brevedad.
+  </p>
+
+  <p style="margin:0 0 18px;color:#1b5e20;font-weight:600;">
+    📲 También puedes escribirnos por WhatsApp para una atención inmediata.
+  </p>
+
+  <button onclick="document.getElementById('formBox').style.display='none'"
+    style="
+      padding:10px 22px;
+      border:none;
+      border-radius:10px;
+      background:#c9a24d;
+      color:#fff;
+      font-weight:600;
+      cursor:pointer;
+    ">
+    Cerrar
+  </button>
+</div>
           </div>
         </div>
       </div>
@@ -800,13 +884,16 @@
       headers: { "Accept": "application/json" }
     });
 
-    if (response.ok) {
-      box.style.display = "block";
-      form.reset();
-    } else {
-      alert("Hubo un error al enviar el mensaje. Inténtelo nuevamente.");
-    }
+   if (response.ok) {
+  document.getElementById("successModal").classList.add("active");
+  form.reset();
+} else {
+  alert("Hubo un error al enviar el mensaje. Inténtelo nuevamente.");
+}
   });
+    document.getElementById("closeModal").addEventListener("click", () => {
+  document.getElementById("successModal").classList.remove("active");
+});
   </script>
 </body>
 </html>
