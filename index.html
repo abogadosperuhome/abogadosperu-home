@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ABOGADOSPERU.HOME | Estudio Jurídico</title>
+  <meta name="description" content="Estudio jurídico con enfoque estratégico, comunicación clara y defensa eficaz."/>
+
+  <style>
+    :root{
+      --nude:#fbf6ef;
+      --nude-2:#efe6da;
+      --ink:#121212;
+      --muted:#5b534b;
+      --paper:#ffffff;
+      --line:rgba(18,18,18,.14);
+      --shadow:0 18px 55px rgba(18,18,18,.10);
+      --shadow2:0 10px 25px rgba(18,18,18,.08);
+      --radius:22px;
+      --max:1120px;
+      --dark:#0f2a2d;
+      --whatsapp:#1f5f3b;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      background:var(--nude);
+      color:var(--ink);
+    }
+    a{text-decoration:none;color:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    /* NAV */
+    .nav{
+      position:sticky;top:0;z-index:50;
+      background:rgba(251,246,239,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;height:72px;
+    }
+    .brand{font-weight:800;letter-spacing:.4px;display:flex;gap:12px;align-items:center}
+    .brand-mark{
+      width:34px;height:34px;border-radius:12px;border:1px solid var(--line);
+      background:linear-gradient(135deg,var(--nude-2),#fff);
+      box-shadow:var(--shadow2)
+    }
+    .menu{
+      display:flex;gap:14px;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-weight:700;color:var(--muted)
+    }
+    .menu a{padding:10px 12px;border-radius:14px}
+    .menu a:hover{background:rgba(18,18,18,.06)}
+    .cta{
+      padding:12px 16px;border-radius:16px;font-weight:900;
+      background:#fff;border:1px solid var(--line);box-shadow:var(--shadow2)
+    }
+
+    /* HERO */
+    .hero{padding:56px 0 0}
+    .hero-card{
+      position:relative;border-radius:var(--radius);overflow:hidden;
+      border:1px solid var(--line);box-shadow:var(--shadow);min-height:430px
+    }
+    .hero-bg{
+      position:absolute;inset:0;
+      background:
+        linear-gradient(0deg, rgba(0,0,0,.65), rgba(0,0,0,.35)),
+        url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=70");
+      background-size:cover;background-position:center
+    }
+    .hero-content{
+      position:relative;padding:52px 38px;max-width:580px;color:#fff
+    }
+    .hero small{
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      letter-spacing:.2px;opacity:.9
+    }
+    .hero h1{margin:6px 0 12px;font-size:clamp(36px,4.6vw,58px)}
+    .hero p{
+      margin:0 0 22px;line-height:1.75;color:#f3efe9;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif
+    }
+    .hero .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 20px;border-radius:16px;font-weight:900;
+      background:#fff;color:#000
+    }
+
+    /* PILLARS */
+    .pillars{margin-top:-36px;padding-bottom:28px}
+    .pillars-wrap{
+      background:var(--dark);border-radius:18px;box-shadow:var(--shadow);
+      display:grid;grid-template-columns:repeat(3,1fr)
+    }
+    .pillar{
+      padding:22px 20px;border-right:1px solid rgba(255,255,255,.12);
+      color:#e9f0ef
+    }
+    .pillar:last-child{border-right:none}
+    .pillar b{display:block;margin-bottom:8px;font-size:18px}
+    .pillar p{
+      margin:0;line-height:1.7;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif
+    }
+    .icon{
+      width:40px;height:40px;border-radius:12px;margin-bottom:10px;
+      background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center
+    }
+
+    /* SECTIONS */
+    .section{padding:56px 0}
+    .section h2{margin:0 0 10px;font-size:34px}
+    .section p{
+      margin:0;color:var(--muted);line-height:1.75;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif
+    }
+
+    /* ABOUT */
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+    .card{
+      background:var(--paper);border:1px solid var(--line);
+      border-radius:var(--radius);box-shadow:var(--shadow2);padding:22px
+    }
+
+    /* SERVICES */
+    .services-bg{
+      background:
+        linear-gradient(0deg, rgba(251,246,239,.95), rgba(251,246,239,.95)),
+        url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1800&q=70");
+      background-size:cover;background-position:center
+    }
+    .grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px
+    }
+    .service{
+      padding:18px;display:flex;flex-direction:column;gap:10px
+    }
+    .sicon{
+      width:44px;height:44px;border-radius:999px;border:1px solid var(--line);
+      display:flex;align-items:center;justify-content:center;font-weight:900
+    }
+    .service h3{margin:0;font-size:20px}
+    .service p{
+      margin:0;color:var(--muted);line-height:1.7;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif
+    }
+
+    /* CONTACT */
+    .contact-bg{
+      background:
+        linear-gradient(0deg, rgba(251,246,239,.92), rgba(251,246,239,.92)),
+        url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1800&q=70");
+      background-size:cover;background-position:center
+    }
+    .contact{
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:16px;margin-top:18px
+    }
+    .contact-left{
+      background:linear-gradient(180deg,var(--nude-2),#fff)
+    }
+    .contact-item{
+      display:grid;grid-template-columns:46px 1fr;gap:14px;padding:18px 0;
+      border-top:1px solid var(--line)
+    }
+    .contact-item:first-of-type{border-top:none}
+    .contact-right form{
+      display:grid;gap:14px;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif
+    }
+    input,textarea,select{
+      border:none;border-bottom:1px solid var(--line);
+      padding:10px;background:transparent;outline:none
+    }
+    .send{
+      align-self:center;padding:12px 32px;border-radius:10px;
+      background:var(--dark);color:#fff;border:none;font-weight:900
+    }
+
+    /* WHATSAPP */
+    .whatsapp{
+      position:fixed;right:18px;bottom:18px;z-index:100;
+      background:var(--whatsapp);color:#fff;
+      width:56px;height:56px;border-radius:999px;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:var(--shadow);font-size:26px
+    }
+
+    footer{
+      border-top:1px solid var(--line);padding:22px 0;color:var(--muted);
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif
+    }
+
+    @media (max-width:980px){
+      .menu{display:none}
+      .pillars-wrap{grid-template-columns:1fr}
+      .about,.grid,.contact{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+
+<a class="whatsapp" href="https://wa.me/51999999999" target="_blank">💬</a>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand"><span class="brand-mark"></span>ABOGADOSPERU.HOME</div>
+    <nav class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre">Sobre nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="cta" href="#contacto">Solicitar asesoría</a>
+  </div>
+</header>
+
+<main class="container">
+
+<section id="inicio" class="hero">
+  <div class="hero-card">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <small>Bienvenido(a) a nuestro estudio jurídico</small>
+      <h1>Tu tranquilidad legal comienza aquí.</h1>
+      <p>Brindamos asesoría legal con una visión estratégica, comunicación clara y defensa responsable, orientada a proteger los intereses de personas, familias y empresas.</p>
+      <a class="btn" href="#contacto">Solicitar asesoría</a>
+    </div>
+  </div>
+
+  <div class="pillars">
+    <div class="pillars-wrap">
+      <div class="pillar">
+        <div class="icon">⚖️</div>
+        <b>Análisis legal</b>
+        <p>Evaluamos cada caso con rigor jurídico y criterio estratégico.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">📘</div>
+        <b>Estrategia clara</b>
+        <p>Diseñamos planes legales por etapas, con objetivos definidos.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon">🛡️</div>
+        <b>Defensa eficaz</b>
+        <p>Representación responsable y técnica en cada instancia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="section">
+  <h2>Sobre nosotros</h2>
+  <p>Estudio jurídico con visión estratégica, atención personalizada y compromiso ético.</p>
+  <div class="about">
+    <div class="card">
+      <p>Brindamos soluciones legales a personas, familias y empresas, acompañando desde la asesoría inicial hasta la representación en juicio.</p>
+    </div>
+    <div class="card">
+      <p>Priorizamos la claridad, el orden y la comunicación directa, con enfoque en resultados.</p>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" class="section services-bg">
+  <h2>Áreas de práctica legal</h2>
+  <div class="grid">
+    <div class="card service"><div class="sicon">⚖️</div><h3>Derecho de Familia</h3><p>Asesoría y patrocinio en procesos familiares.</p></div>
+    <div class="card service"><div class="sicon">🏛️</div><h3>Derecho Civil</h3><p>Contratos, obligaciones y responsabilidad civil.</p></div>
+    <div class="card service"><div class="sicon">🚨</div><h3>Derecho Penal</h3><p>Defensa y representación en procesos penales.</p></div>
+    <div class="card service"><div class="sicon">📈</div><h3>Mercantil y Corporativo</h3><p>Soporte legal a empresas y emprendedores.</p></div>
+    <div class="card service"><div class="sicon">🏢</div><h3>Derecho con el Estado</h3><p>Procedimientos administrativos y contrataciones.</p></div>
+    <div class="card service"><div class="sicon">⚖️</div><h3>Derecho Procesal</h3><p>Estrategia y conducción de procesos judiciales.</p></div>
+  </div>
+</section>
+
+<section id="contacto" class="section contact-bg">
+  <h2>Contacto</h2>
+  <div class="contact">
+    <div class="card contact-left">
+      <h3>¿Necesita asesoría legal?</h3>
+      <p>Analizamos su caso con confidencialidad y criterio profesional.</p>
+      <div class="contact-item"><div class="icon">📞</div><div><b>Teléfono / WhatsApp</b><span>(por definir)</span></div></div>
+      <div class="contact-item"><div class="icon">✉️</div><div><b>Correo electrónico</b><span>(por definir)</span></div></div>
+      <div class="contact-item"><div class="icon">📍</div><div><b>Ubicación</b><span>Lima – Perú</span></div></div>
+    </div>
+    <div class="card contact-right">
+      <form onsubmit="event.preventDefault()">
+        <input placeholder="Nombre completo"/>
+        <input type="email" placeholder="Correo electrónico"/>
+        <select>
+          <option>Seleccione un servicio</option>
+          <option>Derecho de Familia</option>
+          <option>Derecho Civil</option>
+          <option>Derecho Penal</option>
+          <option>Mercantil y Corporativo</option>
+          <option>Derecho con el Estado</option>
+          <option>Derecho Procesal</option>
+        </select>
+        <textarea placeholder="Mensaje"></textarea>
+        <button class="send">Enviar consulta</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© <span id="y"></span> ABOGADOSPERU.HOME</div>
+</footer>
+
+</main>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
