@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ABOGADOSPERU.HOME | Estudio Jurídico</title>
+  <title>YR ABOGADOS | Estudio Jurídico</title>
   <meta name="description" content="Estudio jurídico con enfoque estratégico, comunicación clara y defensa eficaz." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -295,6 +295,170 @@
     .card h3{margin:8px 0 8px; font-family:"Playfair Display", serif; font-size:20px;}
     .card p{margin:0; color:rgba(18,18,18,.74); line-height:1.7; font-size:14.5px;}
 
+    /* ====== PRO BONO (NUEVA SECCIÓN) ====== */
+    .pb-wrap{
+      margin-top:22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.80), rgba(255,255,255,.80)),
+        url("https://images.unsplash.com/photo-1526481280695-3c687fd5432c?auto=format&fit=crop&w=1800&q=70");
+      background-size:cover;
+      background-position:center;
+      border-radius:var(--radius);
+      border:1px solid rgba(18,18,18,.08);
+      box-shadow:var(--shadow2);
+      overflow:hidden;
+    }
+    .pb-inner{
+      display:grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap:18px;
+      padding:24px;
+      align-items:stretch;
+    }
+    .pb-left{
+      background:rgba(255,255,255,.90);
+      border:1px solid rgba(18,18,18,.08);
+      border-radius:18px;
+      box-shadow:0 10px 22px rgba(18,18,18,.08);
+      padding:22px 22px 18px;
+    }
+    .pb-left h3{
+      margin:10px 0 8px;
+      font-family:"Playfair Display", serif;
+      font-size:26px;
+      line-height:1.15;
+    }
+    .pb-left p{
+      margin:0 0 12px;
+      color:rgba(18,18,18,.74);
+      line-height:1.75;
+      font-size:14.9px;
+    }
+    .pb-badges{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 14px;}
+    .pb-badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(18,18,18,.10);
+      background:rgba(255,255,255,.78);
+      color:rgba(18,18,18,.74);
+      font-weight:900;
+      font-size:12.5px;
+    }
+    .pb-badge .mini-dot{width:8px; height:8px; border-radius:999px; background:linear-gradient(180deg,var(--gold),var(--gold2));}
+    .pb-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;}
+    .btn.ghost{
+      background:rgba(255,255,255,.82);
+      border-color:rgba(18,18,18,.14);
+      color:rgba(18,18,18,.85);
+    }
+
+    .pb-acc{
+      margin-top:14px;
+      border-top:1px solid rgba(18,18,18,.10);
+      padding-top:10px;
+    }
+    .pb-q{
+      width:100%;
+      text-align:left;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(18,18,18,.10);
+      background:rgba(15,42,45,.06);
+      cursor:pointer;
+      font-weight:900;
+      color:rgba(18,18,18,.82);
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px;
+      margin-top:10px;
+    }
+    .pb-q span{font-size:14px}
+    .pb-q i{
+      font-style:normal;
+      width:26px; height:26px;
+      border-radius:999px;
+      display:flex; align-items:center; justify-content:center;
+      background:rgba(255,255,255,.75);
+      border:1px solid rgba(18,18,18,.10);
+    }
+    .pb-a{
+      display:none;
+      padding:10px 12px 2px;
+      color:rgba(18,18,18,.74);
+      line-height:1.75;
+      font-size:14.6px;
+    }
+    .pb-item.open .pb-a{display:block}
+
+    .pb-right{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(18,18,18,.10);
+      box-shadow:0 14px 30px rgba(18,18,18,.12);
+      background:
+        linear-gradient(180deg, rgba(15,42,45,.15), rgba(15,42,45,.28)),
+        url("https://images.unsplash.com/photo-1453945619913-79ec89a82c51?auto=format&fit=crop&w=1600&q=70");
+      background-size:cover;
+      background-position:center;
+      position:relative;
+      min-height: 360px;
+    }
+    .pb-right::after{
+      content:"";
+      position:absolute;
+      inset:14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.35);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02));
+      pointer-events:none;
+    }
+    .pb-panel{
+      position:absolute;
+      left:18px; right:18px; bottom:18px;
+      padding:16px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,.88);
+      border:1px solid rgba(18,18,18,.10);
+      box-shadow:0 18px 40px rgba(18,18,18,.12);
+      z-index:1;
+    }
+    .pb-panel b{
+      display:block;
+      font-family:"Playfair Display", serif;
+      font-size:18px;
+      margin-bottom:4px;
+    }
+    .pb-panel .mut{color:rgba(18,18,18,.70); font-size:13.7px; line-height:1.55;}
+    .pb-calc{
+      display:flex; gap:10px; align-items:center; margin-top:10px; flex-wrap:wrap;
+    }
+    .pb-calc input{
+      flex:1 1 200px;
+      border:1px solid rgba(18,18,18,.14);
+      border-radius:12px;
+      padding:10px 12px;
+      font-size:14.8px;
+      background:rgba(255,255,255,.75);
+      outline:none;
+    }
+    .pb-calc .out{
+      flex:0 0 auto;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(18,18,18,.10);
+      background:rgba(15,42,45,.06);
+      font-weight:900;
+      color:rgba(18,18,18,.82);
+      min-width: 160px;
+      text-align:center;
+    }
+    .pb-note{
+      margin-top:8px;
+      color:rgba(18,18,18,.66);
+      font-size:12.8px;
+      line-height:1.6;
+    }
+
     /* Contacto */
     .contact-bg{
       margin-top:22px;
@@ -446,6 +610,35 @@
       cursor:pointer;
     }
 
+    /* Pro Bono modal (reusa overlay, caja distinta) */
+    .pb-modal .modal-box{
+      background:rgba(255,255,255,.96);
+      border:1px solid rgba(18,18,18,.12);
+      box-shadow:0 24px 55px rgba(18,18,18,.20);
+      text-align:left;
+      padding:22px 22px 18px;
+      width:min(560px, 92vw);
+    }
+    .pb-modal .modal-box h3{
+      color:rgba(18,18,18,.88);
+      font-family:"Playfair Display", serif;
+      font-size:24px;
+      margin:0 0 6px;
+    }
+    .pb-modal .modal-box p{
+      margin:0 0 12px;
+      color:rgba(18,18,18,.72);
+      line-height:1.65;
+      font-size:14.6px;
+    }
+    .pb-modal .pb-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:10px;}
+    .pb-modal .pb-grid .field{margin-bottom:0}
+    .pb-modal .pb-grid .full{grid-column:1/-1}
+    .pb-modal .actions{
+      display:flex; gap:10px; justify-content:flex-end; margin-top:12px; flex-wrap:wrap;
+    }
+    .pb-modal .btn.small{padding:10px 12px}
+
     /* RESPONSIVE */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns: 1fr;}
@@ -467,6 +660,11 @@
         -webkit-overflow-scrolling:touch;
       }
       .menu::-webkit-scrollbar{height:6px}
+
+      /* Pro Bono responsive */
+      .pb-inner{grid-template-columns:1fr; padding:18px;}
+      .pb-right{min-height: 320px;}
+      .pb-modal .pb-grid{grid-template-columns:1fr;}
     }
     @media (max-width: 560px){
       .hero-left h1{font-size: 38px;}
@@ -475,6 +673,8 @@
       .brand .name{font-size: 16px;}
       .btn{padding:10px 12px;}
       .whatsapp-float{width:52px; height:52px;}
+      .pb-left h3{font-size:24px;}
+      .pb-panel b{font-size:17px;}
     }
   </style>
 </head>
@@ -505,7 +705,7 @@
             <img src="logo.png" alt="Logo ABOGADOSPERU.HOME" onerror="this.style.display='none'">
           </div>
           <div>
-            <div class="name">ABOGADOSPERU.HOME</div>
+            <div class="name">YR ABOGADOS</div>
             <div class="tag">Estudio jurídico • Perú</div>
           </div>
         </div>
@@ -514,6 +714,8 @@
           <button class="active" data-go="inicio" type="button">Inicio</button>
           <button data-go="sobre" type="button">Sobre nosotros</button>
           <button data-go="servicios" type="button">Servicios</button>
+          <!-- NUEVO -->
+          <button data-go="probono" type="button">Casos Pro Bono</button>
           <button data-go="contacto" type="button">Contacto</button>
         </nav>
 
@@ -595,7 +797,7 @@
       <div class="about-wrap">
         <div class="about-card">
           <div class="pad">
-            <h3>ABOGADOSPERU.HOME</h3>
+            <h3>YR ABOGADOS</h3>
             <p>
               Te acompañamos desde la asesoría inicial hasta la representación en juicio con atención personalizada,
               comunicación directa y decisiones informadas.
@@ -679,6 +881,94 @@
         </div>
       </div>
     </section>
+
+    <!-- ====== NUEVA SECCIÓN: PRO BONO ====== -->
+    <section id="probono" class="section">
+      <div class="title">
+        <h2>Casos Pro Bono</h2>
+        <p>
+          Acceso a la justicia con evaluación responsable. Modalidad con <b>tasa de éxito</b>:
+          <b>35% únicamente sobre el monto efectivamente obtenido</b>, si el resultado es favorable.
+        </p>
+      </div>
+
+      <div class="pb-wrap">
+        <div class="pb-inner">
+          <div class="pb-left">
+            <div class="kicker"><span class="dot"></span> Evaluación confidencial • Criterio profesional</div>
+            <h3>Atención Pro Bono con tasa de éxito (35%)</h3>
+            <p>
+              Brindamos asistencia legal a personas que no pueden asumir los gastos iniciales de un proceso.
+              En los casos aceptados, los honorarios se pactan bajo modalidad de <b>tasa de éxito</b>:
+              <b>35% únicamente sobre el monto efectivamente obtenido</b> cuando el resultado sea favorable.
+            </p>
+
+            <div class="pb-badges" aria-label="Condiciones clave">
+              <div class="pb-badge"><span class="mini-dot"></span> Solo si hay resultado favorable</div>
+              <div class="pb-badge"><span class="mini-dot"></span> 35% sobre monto obtenido</div>
+              <div class="pb-badge"><span class="mini-dot"></span> Evaluación previa</div>
+            </div>
+
+            <div class="pb-actions">
+              <button class="btn primary" id="pbOpen" type="button">Solicitar evaluación</button>
+              <a class="btn ghost" id="pbWhatsApp" href="https://wa.me/51999999999" target="_blank" rel="noopener">WhatsApp</a>
+              <button class="btn soft" id="pbScrollReq" type="button">Ver requisitos</button>
+            </div>
+
+            <div class="pb-acc" id="pbReq">
+              <div class="pb-item">
+                <button class="pb-q" type="button"><span>¿Qué casos suelen calificar?</span><i>+</i></button>
+                <div class="pb-a">
+                  <ul>
+                    <li>Casos con sustento documental mínimo y relato coherente de hechos.</li>
+                    <li>Viabilidad jurídica razonable y posibilidad real de obtener un resultado favorable.</li>
+                    <li>Situación de vulnerabilidad económica (evaluada caso por caso).</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="pb-item">
+                <button class="pb-q" type="button"><span>Documentos recomendados</span><i>+</i></button>
+                <div class="pb-a">
+                  <ul>
+                    <li>DNI y datos de contacto.</li>
+                    <li>Documentos del caso (contratos, cartas, notificaciones, etc.).</li>
+                    <li>Pruebas: recibos, capturas, correos, mensajes, informes, entre otros.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="pb-item">
+                <button class="pb-q" type="button"><span>Transparencia de honorarios</span><i>+</i></button>
+                <div class="pb-a">
+                  <p>
+                    La modalidad Pro Bono aquí descrita contempla <b>35%</b> únicamente si se obtiene un resultado favorable
+                    y sobre el <b>monto efectivamente obtenido</b>. Los términos se formalizan por escrito.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pb-right" aria-label="Imagen Pro Bono">
+            <div class="pb-panel">
+              <b>Calculadora referencial</b>
+              <div class="mut">Ingresa un monto estimado para ver el 35%.</div>
+
+              <div class="pb-calc">
+                <input id="pbMonto" type="number" inputmode="decimal" placeholder="Monto estimado (S/)" />
+                <div class="out" id="pbOut">35%: S/ 0.00</div>
+              </div>
+
+              <div class="pb-note">
+                * Referencial. El cálculo final depende del monto efectivamente obtenido y del acuerdo formal.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== FIN PRO BONO ====== -->
 
     <section id="contacto" class="section">
       <div class="title">
@@ -768,17 +1058,54 @@
     </section>
 
     <footer>
-      © <span id="year"></span> ABOGADOSPERU.HOME — Todos los derechos reservados.
+      © <span id="year"></span> YR ABOGADOS — Todos los derechos reservados.
     </footer>
   </main>
 
-  <!-- ✅ Modal éxito -->
+  <!-- ✅ Modal éxito (contacto) -->
   <div id="successModal" class="modal-overlay" aria-hidden="true">
     <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <h3 id="modalTitle">✅ Mensaje enviado con éxito</h3>
       <p>Gracias por contactarnos. Hemos recibido tu consulta y uno de nuestros abogados se comunicará contigo a la brevedad.</p>
       <p class="whatsapp-text">📲 También puedes escribirnos por WhatsApp para una atención inmediata.</p>
       <button id="closeModal" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- ✅ Modal Pro Bono -->
+  <div id="pbModal" class="modal-overlay pb-modal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="pbTitle">
+      <h3 id="pbTitle">Solicitud de evaluación Pro Bono</h3>
+      <p>
+        Completa estos datos y te contactaremos. Modalidad con <b>tasa de éxito</b>:
+        <b>35% únicamente sobre el monto efectivamente obtenido</b>, si el resultado es favorable.
+      </p>
+
+      <form id="pbForm">
+        <div class="pb-grid">
+          <div class="field">
+            <label for="pbNombre">Nombre</label>
+            <input id="pbNombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="field">
+            <label for="pbTel">Teléfono</label>
+            <input id="pbTel" name="telefono" placeholder="9XXXXXXXX" required>
+          </div>
+          <div class="field full">
+            <label for="pbCaso">Resumen del caso</label>
+            <textarea id="pbCaso" name="caso" placeholder="Cuéntanos brevemente qué ocurrió, fechas y qué buscas obtener." required></textarea>
+          </div>
+          <div class="field full">
+            <label for="pbDocs">Documentos (opcional)</label>
+            <input id="pbDocs" name="docs" placeholder="Ej: contrato, boletas, cartas, capturas, etc.">
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn soft small" id="pbClose" type="button">Cerrar</button>
+          <button class="btn primary small" type="submit">Enviar</button>
+        </div>
+      </form>
     </div>
   </div>
 
@@ -811,6 +1138,11 @@
     document.getElementById("waBtn").href = "https://wa.me/" + CONFIG.whatsappNumber;
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Pro Bono WhatsApp (mensaje elegante + claro)
+    const pbWhatsApp = document.getElementById("pbWhatsApp");
+    const pbMsg = encodeURIComponent("Hola, deseo solicitar evaluación en modalidad Pro Bono (tasa de éxito 35%). ¿Podrían indicarme los requisitos y el procedimiento?");
+    if (pbWhatsApp) pbWhatsApp.href = "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + pbMsg;
+
     // ====== NAV SECTIONS ======
     const links = document.querySelectorAll(".menu button");
     const sections = document.querySelectorAll(".section");
@@ -827,7 +1159,7 @@
     document.getElementById("ctaAsesoria").addEventListener("click", () => activate("contacto"));
     document.getElementById("ctaServicios").addEventListener("click", () => activate("servicios"));
 
-    // ====== MODAL + FORM ======
+    // ====== MODAL + FORM (CONTACTO) ======
     window.addEventListener("DOMContentLoaded", () => {
       const form = document.getElementById("formContacto");
       const modal = document.getElementById("successModal");
@@ -838,7 +1170,7 @@
       function openModal(){
         modal.classList.add("active");
         modal.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden"; // opcional: bloquea scroll cuando abre
+        document.body.style.overflow = "hidden";
       }
       function closeModal(){
         modal.classList.remove("active");
@@ -848,12 +1180,10 @@
 
       closeBtn.addEventListener("click", closeModal);
 
-      // cerrar si hace click fuera de la caja
       modal.addEventListener("click", (e) => {
         if (e.target === modal) closeModal();
       });
 
-      // cerrar con ESC
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && modal.classList.contains("active")) closeModal();
       });
@@ -882,6 +1212,97 @@
         }
       });
     });
+
+    // ====== PRO BONO INTERACCIONES ======
+    // Accordion
+    document.querySelectorAll(".pb-item .pb-q").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".pb-item");
+        const open = item.classList.toggle("open");
+        const icon = btn.querySelector("i");
+        if (icon) icon.textContent = open ? "–" : "+";
+      });
+    });
+
+    // Scroll a requisitos dentro de la sección
+    const pbScrollReq = document.getElementById("pbScrollReq");
+    if (pbScrollReq){
+      pbScrollReq.addEventListener("click", () => {
+        const el = document.getElementById("pbReq");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+
+    // Calculadora 35%
+    const pbMonto = document.getElementById("pbMonto");
+    const pbOut = document.getElementById("pbOut");
+    function formatPEN(n){
+      const val = isFinite(n) ? n : 0;
+      return "S/ " + val.toFixed(2);
+    }
+    if (pbMonto && pbOut){
+      pbMonto.addEventListener("input", () => {
+        const v = parseFloat(pbMonto.value || "0");
+        const r = (isFinite(v) ? v : 0) * 0.35;
+        pbOut.textContent = "35%: " + formatPEN(r);
+      });
+    }
+
+    // Modal Pro Bono (sin romper lo demás)
+    const pbModal = document.getElementById("pbModal");
+    const pbOpen = document.getElementById("pbOpen");
+    const pbClose = document.getElementById("pbClose");
+    const pbForm = document.getElementById("pbForm");
+
+    function pbOpenModal(){
+      if (!pbModal) return;
+      pbModal.classList.add("active");
+      pbModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+    function pbCloseModal(){
+      if (!pbModal) return;
+      pbModal.classList.remove("active");
+      pbModal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    if (pbOpen) pbOpen.addEventListener("click", pbOpenModal);
+    if (pbClose) pbClose.addEventListener("click", pbCloseModal);
+
+    if (pbModal){
+      pbModal.addEventListener("click", (e) => {
+        if (e.target === pbModal) pbCloseModal();
+      });
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && pbModal && pbModal.classList.contains("active")) pbCloseModal();
+    });
+
+    // Envío Pro Bono: por ahora lo manda a WhatsApp (no toca tu Formspree ni lo rompe)
+    if (pbForm){
+      pbForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const nombre = document.getElementById("pbNombre")?.value?.trim() || "";
+        const tel = document.getElementById("pbTel")?.value?.trim() || "";
+        const caso = document.getElementById("pbCaso")?.value?.trim() || "";
+        const docs = document.getElementById("pbDocs")?.value?.trim() || "";
+
+        const msg = [
+          "Hola, deseo solicitar evaluación Pro Bono (tasa de éxito 35%).",
+          nombre ? ("Nombre: " + nombre) : "",
+          tel ? ("Teléfono: " + tel) : "",
+          caso ? ("Resumen del caso: " + caso) : "",
+          docs ? ("Documentos: " + docs) : "",
+        ].filter(Boolean).join("\n");
+
+        const url = "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(msg);
+        window.open(url, "_blank", "noopener");
+        pbForm.reset();
+        pbCloseModal();
+      });
+    }
   </script>
 </body>
 </html>
