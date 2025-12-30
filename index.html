@@ -6,49 +6,50 @@
   <title>ABOGADOSPERU.HOME | Estudio Jurídico</title>
   <meta name="description" content="Estudio jurídico con enfoque estratégico, comunicación clara y defensa eficaz." />
 
-  <!-- Fuentes (clásico) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #f6efe7;      /* beige/nude */
-      --paper: #ffffff;   /* blanco */
-      --ink: #121212;     /* negro */
-      --muted: #6d625a;   /* gris cálido */
-      --line: rgba(18,18,18,.12);
-      --shadow: 0 18px 55px rgba(18,18,18,.10);
-      --shadow2: 0 10px 25px rgba(18,18,18,.08);
-      --radius: 22px;
-      --max: 1120px;
+      --bg:#f6efe7;
+      --paper:#ffffff;
+      --ink:#121212;
+      --muted:#6d625a;
+      --line:rgba(18,18,18,.10);
+      --shadow:0 18px 55px rgba(18,18,18,.09);
+      --shadow2:0 12px 30px rgba(18,18,18,.07);
+      --radius:22px;
+      --max:1120px;
 
-      --deep: #0f2a2d;    /* verde oscuro elegante */
-      --gold: #c8a25a;    /* dorado suave */
+      --deep:#0f2a2d;
+      --gold:#c8a25a;
       --gold2:#b48b43;
 
-      --wa: #25D366;      /* WhatsApp */
+      --wa:#25D366;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
+      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(900px 500px at 50% -20%, rgba(200,162,90,.12), transparent 60%),
+        radial-gradient(900px 500px at 0% 20%, rgba(15,42,45,.08), transparent 55%),
+        var(--bg);
     }
     a{color:inherit; text-decoration:none}
     img{max-width:100%; display:block}
-
     .container{max-width:var(--max); margin:0 auto; padding:0 20px;}
-    .hide{display:none !important}
 
-    /* Top bar (como referencia) */
+    /* TOPBAR */
     .topbar{
-      background: var(--deep);
-      color: rgba(255,255,255,.92);
-      font-size: 13px;
+      background:linear-gradient(90deg,#0f2a2d,#0b2022);
+      color:rgba(255,255,255,.92);
+      font-size:13px;
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
     .topbar .row{
       display:flex; gap:16px; align-items:center; justify-content:center;
@@ -57,473 +58,365 @@
     .topbar .item{display:flex; gap:8px; align-items:center; opacity:.95}
     .topbar svg{width:16px; height:16px; opacity:.9}
 
-    /* Navbar */
+    /* NAV */
     .nav{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(8px);
-      background: rgba(246,239,231,.82);
-      border-bottom: 1px solid var(--line);
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(246,239,231,.80);
+      border-bottom:1px solid var(--line);
     }
     .nav .inner{
       display:flex; align-items:center; justify-content:space-between;
       padding:14px 0;
-      gap:16px;
+      gap:14px;
     }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-      min-width: 210px;
-    }
+    .brand{display:flex; align-items:center; gap:12px; min-width: 210px;}
     .brand .logo{
-      width:44px; height:44px; border-radius: 12px;
-      background: rgba(18,18,18,.06);
-      border: 1px solid rgba(18,18,18,.10);
+      width:44px; height:44px; border-radius:12px;
+      background:rgba(18,18,18,.04);
+      border:1px solid rgba(18,18,18,.10);
       overflow:hidden;
       display:flex; align-items:center; justify-content:center;
-      flex: 0 0 auto;
+      flex:0 0 auto;
     }
-    /* Usa tu logo real subiéndolo como logo.png al repo */
     .brand .logo img{width:100%; height:100%; object-fit:cover}
     .brand .name{
-      font-family: "Playfair Display", serif;
-      font-weight: 700;
-      letter-spacing: .5px;
-      font-size: 18px;
-      line-height: 1.1;
+      font-family:"Playfair Display", serif;
+      font-weight:700;
+      letter-spacing:.35px;
+      font-size:18px; line-height:1.1;
     }
-    .brand .tag{
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
+    .brand .tag{font-size:12px; color:var(--muted); margin-top:2px;}
 
     .menu{
-      display:flex; gap:18px; align-items:center;
-      justify-content:center;
-      flex: 1;
+      display:flex; gap:10px; align-items:center; justify-content:center;
+      flex:1;
     }
     .menu button{
-      border:0;
-      background: transparent;
-      padding:10px 10px;
-      border-radius: 999px;
-      font-weight: 600;
-      color: rgba(18,18,18,.78);
+      border:0; background:transparent;
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:800;
+      color:rgba(18,18,18,.76);
       cursor:pointer;
-      transition: background .2s ease, color .2s ease;
+      transition:background .2s ease, color .2s ease;
+      white-space:nowrap;
     }
-    .menu button:hover{background: rgba(18,18,18,.06)}
-    .menu button.active{
-      background: rgba(15,42,45,.10);
-      color: var(--deep);
-    }
+    .menu button:hover{background:rgba(18,18,18,.05)}
+    .menu button.active{background:rgba(15,42,45,.10); color:var(--deep)}
 
-    .nav .cta{
-      display:flex; align-items:center; gap:10px;
-      min-width: 210px;
-      justify-content:flex-end;
-    }
+    .cta{display:flex; justify-content:flex-end; min-width:210px;}
     .btn{
       border:1px solid rgba(18,18,18,.14);
-      background: var(--paper);
+      background:var(--paper);
       padding:10px 14px;
-      border-radius: 999px;
-      font-weight: 700;
+      border-radius:999px;
+      font-weight:900;
       cursor:pointer;
-      box-shadow: 0 8px 18px rgba(18,18,18,.08);
-      transition: transform .2s ease, box-shadow .2s ease;
+      box-shadow:0 10px 22px rgba(18,18,18,.08);
+      transition:transform .18s ease, box-shadow .18s ease;
       display:inline-flex; gap:8px; align-items:center;
     }
-    .btn:hover{transform: translateY(-1px); box-shadow: 0 12px 24px rgba(18,18,18,.12)}
+    .btn:hover{transform:translateY(-1px); box-shadow:0 14px 30px rgba(18,18,18,.12)}
     .btn.primary{
-      background: linear-gradient(180deg, var(--gold), var(--gold2));
-      color: #fff;
-      border-color: transparent;
+      background:linear-gradient(180deg,var(--gold),var(--gold2));
+      color:#fff;
+      border-color:transparent;
     }
     .btn svg{width:18px; height:18px}
 
-    /* Secciones (solo una visible a la vez) */
-    main{padding: 26px 0 64px;}
+    main{padding:26px 0 64px;}
     .section{display:none;}
     .section.active{display:block;}
 
-    /* Hero (Inicio) */
+    /* HERO (responsive ordenado) */
     .hero{
-      background: var(--paper);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      background:rgba(255,255,255,.80);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
       overflow:hidden;
-      border: 1px solid rgba(18,18,18,.08);
+      border:1px solid rgba(18,18,18,.08);
     }
     .hero-grid{
       display:grid;
-      grid-template-columns: 1.08fr .92fr;
-      min-height: 420px;
+      grid-template-columns: 1.05fr .95fr;
+      min-height: 430px;
     }
-    .hero-left{
-      padding: 54px 46px;
-      position: relative;
-      background:
-        linear-gradient(90deg, rgba(18,18,18,.70) 0%, rgba(18,18,18,.45) 50%, rgba(18,18,18,.15) 100%),
-        url("https://images.unsplash.com/photo-1453945619913-79ec89a82c51?auto=format&fit=crop&w=1400&q=70");
-      background-size: cover;
-      background-position: center;
-      color: rgba(255,255,255,.96);
+    .hero-left{padding:54px 46px;}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(18,18,18,.10);
+      background:rgba(255,255,255,.75);
+      color:rgba(18,18,18,.70);
+      font-weight:800;
+      font-size:12.8px;
     }
-    .hero-left small{
-      letter-spacing: .6px;
-      text-transform: none;
-      opacity: .92;
-      font-weight: 500;
-    }
+    .dot{width:8px; height:8px; border-radius:999px; background:linear-gradient(180deg,var(--gold),var(--gold2));}
     .hero-left h1{
-      margin: 14px 0 14px;
-      font-family: "Playfair Display", serif;
-      font-weight: 700;
-      font-size: 54px;
-      line-height: 1.03;
+      margin:16px 0 14px;
+      font-family:"Playfair Display", serif;
+      font-weight:700;
+      font-size:52px;
+      line-height:1.03;
     }
     .hero-left p{
-      margin: 0 0 20px;
-      max-width: 520px;
-      font-size: 15.5px;
-      line-height: 1.55;
-      opacity: .92;
+      margin:0 0 18px;
+      max-width:560px;
+      font-size:15.6px;
+      line-height:1.7;
+      color:rgba(18,18,18,.74);
     }
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top: 18px;}
-    .btn.light{
-      background: rgba(255,255,255,.92);
-      border-color: rgba(255,255,255,.25);
-      color: #141414;
-      box-shadow: 0 10px 24px rgba(0,0,0,.18);
-    }
-
-    /* Bloque 3 columnas (como tu referencia) */
-    .tri{
-      margin-top: -40px;
-      padding: 0 14px 20px;
-    }
-    .tri .panel{
-      background: var(--deep);
-      border-radius: 18px;
-      padding: 24px 18px;
-      box-shadow: 0 18px 40px rgba(15,42,45,.25);
-      border: 1px solid rgba(255,255,255,.08);
-    }
-    .tri-grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .tri-card{
-      color: rgba(255,255,255,.92);
-      padding: 12px 14px;
-      border-radius: 14px;
-      border-left: 1px solid rgba(255,255,255,.12);
-    }
-    .tri-card:first-child{border-left:0}
-    .tri-card .icon{
-      width:34px; height:34px; border-radius: 10px;
-      background: rgba(255,255,255,.10);
-      display:flex; align-items:center; justify-content:center;
-      margin-bottom: 10px;
-    }
-    .tri-card .icon svg{width:20px; height:20px; fill: rgba(255,255,255,.92)}
-    .tri-card h3{
-      margin: 0 0 8px;
-      font-family:"Playfair Display", serif;
-      font-weight: 700;
-      font-size: 18px;
-    }
-    .tri-card p{
-      margin:0;
-      opacity:.9;
-      font-size: 13.8px;
-      line-height:1.5;
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;}
+    .btn.soft{
+      background:rgba(15,42,45,.08);
+      border-color:rgba(15,42,45,.10);
+      color:var(--deep);
     }
 
-    /* Títulos */
-    .title{
-      text-align:center;
-      margin: 34px 0 14px;
-    }
-    .title h2{
-      font-family:"Playfair Display", serif;
-      font-size: 34px;
-      margin:0;
-    }
-    .title p{
-      margin: 10px auto 0;
-      max-width: 720px;
-      color: var(--muted);
-      line-height:1.6;
-      font-size: 15px;
-    }
-
-    /* Sobre nosotros */
-    .about-wrap{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-    .about-card{
-      background: var(--paper);
-      border: 1px solid rgba(18,18,18,.08);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow2);
-      overflow:hidden;
-    }
-    .about-card .pad{padding: 22px 22px 18px;}
-    .about-card h3{
-      margin:0 0 10px;
-      font-family:"Playfair Display", serif;
-      font-size: 22px;
-    }
-    .about-card p{
-      margin: 0 0 10px;
-      color: rgba(18,18,18,.78);
-      line-height: 1.65;
-      font-size: 14.8px;
-    }
-    .about-card ul{
-      margin: 12px 0 0;
-      padding-left: 18px;
-      color: rgba(18,18,18,.78);
-      line-height: 1.7;
-      font-size: 14.6px;
-    }
-    .about-visual{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      padding: 14px;
-    }
-    .about-visual .shot{
-      border-radius: 16px;
-      overflow:hidden;
-      min-height: 170px;
-      border: 1px solid rgba(18,18,18,.10);
-      box-shadow: 0 10px 24px rgba(18,18,18,.10);
-      background-size: cover;
-      background-position: center;
-    }
-    .shot.s1{background-image:url("https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=900&q=70")}
-    .shot.s2{background-image:url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=70")}
-    .shot.s3{background-image:url("https://images.unsplash.com/photo-1555374018-13a8994ab246?auto=format&fit=crop&w=900&q=70")}
-    .shot.s4{background-image:url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=70")}
-
-    /* Servicios */
-    .services-bg{
-      margin-top: 22px;
+    .hero-right{
+      position:relative;
       background:
-        linear-gradient(180deg, rgba(246,239,231,.92), rgba(246,239,231,.92)),
+        linear-gradient(180deg, rgba(15,42,45,.05), rgba(15,42,45,.22)),
         url("https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=1400&q=70");
-      background-size: cover;
-      background-position: center;
-      border-radius: var(--radius);
-      border: 1px solid rgba(18,18,18,.08);
-      box-shadow: var(--shadow2);
-      padding: 22px;
+      background-size:cover;
+      background-position:center;
+      min-height: 320px;
     }
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 16px;
+    .hero-right::after{
+      content:"";
+      position:absolute;
+      inset:18px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.35);
+      background:linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02));
     }
-    .card{
-      background: var(--paper);
-      border: 1px solid rgba(18,18,18,.08);
-      border-radius: 18px;
-      box-shadow: 0 10px 22px rgba(18,18,18,.08);
-      padding: 18px 18px 16px;
-      min-height: 190px;
+    .hero-badge{
+      position:absolute;
+      left:24px; right:24px; bottom:24px;
+      padding:16px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,.84);
+      border:1px solid rgba(18,18,18,.10);
+      box-shadow:0 18px 40px rgba(18,18,18,.12);
+      z-index:1;
     }
-    .card .sicon{
-      width:54px; height:54px; border-radius: 16px;
-      background: rgba(15,42,45,.10);
-      display:flex; align-items:center; justify-content:center;
-      border: 1px solid rgba(15,42,45,.10);
-      margin-bottom: 10px;
-    }
-    .card .sicon svg{
-      width:30px; height:30px;
-      stroke: var(--deep);
-      fill: none;
-      stroke-width: 1.8;
-    }
-    .card h3{
-      margin: 8px 0 8px;
+    .hero-badge b{
+      display:block;
       font-family:"Playfair Display", serif;
-      font-size: 20px;
+      font-size:18px;
+      margin-bottom:4px;
     }
-    .card p{
-      margin:0;
-      color: rgba(18,18,18,.76);
-      line-height: 1.6;
-      font-size: 14.5px;
-    }
+    .hero-badge span{color:rgba(18,18,18,.70); font-size:13.8px; line-height:1.55;}
 
-    /* Contacto (estructura igual a tu foto) */
-    .contact-bg{
-      margin-top: 22px;
-      border-radius: var(--radius);
+    /* 3 tarjetas (ordenadas) */
+    .tri{margin-top:16px;}
+    .tri-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+    .tri-card{
+      background:var(--paper);
+      border:1px solid rgba(18,18,18,.08);
+      border-radius:18px;
+      box-shadow:var(--shadow2);
+      padding:18px 18px 16px;
+    }
+    .tri-card .icon{
+      width:44px; height:44px; border-radius:14px;
+      background:rgba(15,42,45,.08);
+      border:1px solid rgba(15,42,45,.10);
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:10px;
+    }
+    .tri-card .icon svg{width:22px; height:22px; fill:none; stroke:var(--deep); stroke-width:1.8}
+    .tri-card h3{margin:0 0 8px; font-family:"Playfair Display", serif; font-size:19px;}
+    .tri-card p{margin:0; color:rgba(18,18,18,.74); font-size:14.6px; line-height:1.65;}
+
+    /* Titles */
+    .title{text-align:center; margin:38px 0 14px;}
+    .title h2{font-family:"Playfair Display", serif; font-size:34px; margin:0;}
+    .title p{margin:10px auto 0; max-width:760px; color:var(--muted); line-height:1.7; font-size:15px;}
+
+    /* About */
+    .about-wrap{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px;}
+    .about-card{
+      background:var(--paper);
+      border:1px solid rgba(18,18,18,.08);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow2);
       overflow:hidden;
-      border: 1px solid rgba(18,18,18,.08);
-      box-shadow: var(--shadow);
-      background: var(--paper);
     }
-    .contact{
-      display:grid;
-      grid-template-columns: .9fr 1.1fr;
-      min-height: 520px;
+    .about-card .pad{padding:22px 22px 18px;}
+    .about-card h3{margin:0 0 10px; font-family:"Playfair Display", serif; font-size:22px;}
+    .about-card p{margin:0 0 10px; color:rgba(18,18,18,.76); line-height:1.75; font-size:14.8px;}
+    .about-card ul{margin:12px 0 0; padding-left:18px; color:rgba(18,18,18,.76); line-height:1.8; font-size:14.6px;}
+    .about-visual{display:grid; grid-template-columns:1fr 1fr; gap:10px; padding:14px;}
+    .shot{
+      border-radius:16px; overflow:hidden; min-height:170px;
+      border:1px solid rgba(18,18,18,.10);
+      box-shadow:0 10px 24px rgba(18,18,18,.08);
+      background-size:cover; background-position:center;
     }
+    .s1{background-image:url("https://images.unsplash.com/photo-1555374018-13a8994ab246?auto=format&fit=crop&w=900&q=70")}
+    .s2{background-image:url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=900&q=70")}
+    .s3{background-image:url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=70")}
+    .s4{background-image:url("https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=900&q=70")}
+
+    /* Servicios responsive */
+    .services-bg{
+      margin-top:22px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.72), rgba(255,255,255,.72)),
+        url("https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=1400&q=70");
+      background-size:cover;
+      background-position:center;
+      border-radius:var(--radius);
+      border:1px solid rgba(18,18,18,.08);
+      box-shadow:var(--shadow2);
+      padding:22px;
+    }
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px;}
+    .card{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(18,18,18,.08);
+      border-radius:18px;
+      box-shadow:0 10px 22px rgba(18,18,18,.08);
+      padding:18px 18px 16px;
+      min-height:190px;
+      backdrop-filter: blur(6px);
+    }
+    .sicon{
+      width:54px; height:54px; border-radius:16px;
+      background:rgba(15,42,45,.08);
+      display:flex; align-items:center; justify-content:center;
+      border:1px solid rgba(15,42,45,.10);
+      margin-bottom:10px;
+    }
+    .sicon svg{width:30px; height:30px; stroke:var(--deep); fill:none; stroke-width:1.8}
+    .card h3{margin:8px 0 8px; font-family:"Playfair Display", serif; font-size:20px;}
+    .card p{margin:0; color:rgba(18,18,18,.74); line-height:1.7; font-size:14.5px;}
+
+    /* Contacto */
+    .contact-bg{
+      margin-top:22px;
+      border-radius:var(--radius);
+      overflow:hidden;
+      border:1px solid rgba(18,18,18,.08);
+      box-shadow:var(--shadow);
+      background:var(--paper);
+    }
+    .contact{display:grid; grid-template-columns:.9fr 1.1fr; min-height:520px;}
     .contact-left{
-      background: #f1e6d8;
-      padding: 34px 28px;
-      border-right: 1px solid rgba(18,18,18,.10);
+      background:linear-gradient(180deg,#f1e6d8,#f6efe7);
+      padding:34px 28px;
+      border-right:1px solid rgba(18,18,18,.10);
     }
-    .contact-left h3{
-      font-family:"Playfair Display", serif;
-      font-size: 30px;
-      margin: 0 0 10px;
-    }
-    .contact-left p{
-      margin: 0 0 18px;
-      color: rgba(18,18,18,.72);
-      line-height: 1.6;
-    }
+    .contact-left h3{font-family:"Playfair Display", serif; font-size:30px; margin:0 0 10px;}
+    .contact-left p{margin:0 0 18px; color:rgba(18,18,18,.72); line-height:1.7;}
     .contact-item{
-      display:flex; gap: 14px; align-items:flex-start;
-      padding: 18px 0;
-      border-top: 1px solid rgba(18,18,18,.10);
+      display:flex; gap:14px; align-items:flex-start;
+      padding:18px 0;
+      border-top:1px solid rgba(18,18,18,.10);
     }
     .contact-item:first-of-type{border-top:0}
     .cicon{
-      width:52px; height:52px; border-radius: 999px;
-      background: rgba(255,255,255,.65);
+      width:52px; height:52px; border-radius:999px;
+      background:rgba(255,255,255,.75);
       display:flex; align-items:center; justify-content:center;
-      border: 1px solid rgba(18,18,18,.10);
-      flex: 0 0 auto;
+      border:1px solid rgba(18,18,18,.10);
+      flex:0 0 auto;
     }
-    .cicon svg{width:22px; height:22px; stroke: var(--gold2); fill:none; stroke-width:1.9}
-    .contact-item b{display:block; font-size: 16px; margin-bottom: 5px;}
-    .contact-item span{color: rgba(18,18,18,.70); line-height:1.55; font-size: 14.6px;}
+    .cicon svg{width:22px; height:22px; stroke:var(--gold2); fill:none; stroke-width:1.9}
+    .contact-item b{display:block; font-size:16px; margin-bottom:5px;}
+    .contact-item span{color:rgba(18,18,18,.70); line-height:1.7; font-size:14.6px;}
 
-    .contact-right{
-      padding: 36px 34px;
-    }
-    .contact-right h3{
-      text-align:center;
-      font-family:"Playfair Display", serif;
-      font-size: 30px;
-      margin: 0 0 10px;
-    }
-    .contact-right p{
-      text-align:center;
-      margin: 0 0 22px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-    form{
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    .row2{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    .field{
-      display:flex;
-      flex-direction:column;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-    label{
-      color: rgba(18,18,18,.70);
-      font-size: 13.5px;
-      font-weight: 600;
-    }
+    .contact-right{padding:36px 34px;}
+    .contact-right h3{text-align:center; font-family:"Playfair Display", serif; font-size:30px; margin:0 0 10px;}
+    .contact-right p{text-align:center; margin:0 0 22px; color:var(--muted); line-height:1.7;}
+    form{max-width:720px; margin:0 auto;}
+    .row2{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+    .field{display:flex; flex-direction:column; gap:8px; margin-bottom:14px;}
+    label{color:rgba(18,18,18,.70); font-size:13.5px; font-weight:800;}
     input, textarea, select{
       width:100%;
-      border:0;
-      border-bottom: 1px solid rgba(18,18,18,.22);
-      padding: 12px 10px;
-      font-size: 15px;
+      border:1px solid rgba(18,18,18,.12);
+      border-radius:12px;
+      padding:12px 12px;
+      font-size:15px;
       outline:none;
-      background: transparent;
-      font-family: inherit;
+      background:rgba(255,255,255,.70);
+      font-family:inherit;
+      transition: box-shadow .15s ease, border-color .15s ease;
     }
-    textarea{min-height: 120px; resize: vertical;}
-    .send{
-      display:flex; justify-content:center; margin-top: 10px;
+    input:focus, textarea:focus, select:focus{
+      border-color:rgba(180,139,67,.55);
+      box-shadow:0 10px 22px rgba(180,139,67,.16);
+      background:#fff;
     }
+    textarea{min-height:120px; resize:vertical;}
+    .send{display:flex; justify-content:center; margin-top:10px;}
     .send button{
       border:0;
-      background: linear-gradient(180deg, var(--gold), var(--gold2));
+      background:linear-gradient(180deg,var(--gold),var(--gold2));
       color:#fff;
-      padding: 12px 34px;
-      border-radius: 10px;
-      font-weight: 800;
+      padding:12px 34px;
+      border-radius:12px;
+      font-weight:900;
       cursor:pointer;
-      box-shadow: 0 12px 26px rgba(18,18,18,.18);
+      box-shadow:0 12px 26px rgba(18,18,18,.16);
       transition: transform .18s ease;
     }
     .send button:hover{transform: translateY(-1px);}
 
-    /* Footer */
     footer{
-      margin-top: 40px;
-      padding: 18px 0;
-      border-top: 1px solid rgba(18,18,18,.10);
-      color: rgba(18,18,18,.68);
-      font-size: 13.5px;
+      margin-top:40px;
+      padding:18px 0;
+      border-top:1px solid rgba(18,18,18,.10);
+      color:rgba(18,18,18,.68);
+      font-size:13.5px;
       text-align:center;
     }
 
-    /* WhatsApp flotante (SVG oficial) */
+    /* WhatsApp */
     .whatsapp-float{
-      position: fixed;
-      bottom: 18px;
-      right: 18px;
-      width: 58px;
-      height: 58px;
-      background: var(--wa);
-      border-radius: 50%;
+      position:fixed;
+      bottom:18px;
+      right:18px;
+      width:54px;
+      height:54px;
+      background:var(--wa);
+      border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
-      box-shadow: 0 10px 22px rgba(0,0,0,.24);
-      z-index: 9999;
-      transition: transform .2s ease, box-shadow .2s ease;
-      border: 2px solid rgba(255,255,255,.55);
+      box-shadow:0 14px 30px rgba(0,0,0,.22);
+      z-index:9999;
+      transition:transform .18s ease, box-shadow .18s ease;
+      border:2px solid rgba(255,255,255,.60);
     }
-    .whatsapp-float:hover{
-      transform: scale(1.06);
-      box-shadow: 0 14px 28px rgba(0,0,0,.30);
-    }
-    .whatsapp-float svg{width:30px; height:30px; fill:#fff}
+    .whatsapp-float:hover{transform: translateY(-1px) scale(1.05); box-shadow:0 18px 36px rgba(0,0,0,.26);}
+    .whatsapp-float svg{width:28px; height:28px; fill:#fff}
 
-    /* Responsive */
+    /* RESPONSIVE BREAKPOINTS (orden total) */
     @media (max-width: 980px){
       .hero-grid{grid-template-columns: 1fr;}
-      .hero-left{padding: 44px 26px; min-height: 420px;}
+      .hero-left{padding: 44px 26px;}
       .hero-left h1{font-size: 44px;}
-      .tri{margin-top: 16px;}
       .tri-grid{grid-template-columns: 1fr;}
-      .tri-card{border-left:0; border-top: 1px solid rgba(255,255,255,.12)}
-      .tri-card:first-child{border-top:0}
       .about-wrap{grid-template-columns: 1fr;}
       .grid{grid-template-columns: 1fr 1fr;}
       .contact{grid-template-columns: 1fr;}
       .contact-left{border-right:0; border-bottom: 1px solid rgba(18,18,18,.10);}
       .nav .inner{flex-wrap:wrap;}
-      .brand{min-width: auto;}
-      .nav .cta{min-width:auto;}
-      .menu{width:100%; justify-content:flex-start; overflow:auto; padding-bottom: 6px;}
+      .brand{min-width:auto;}
+      .cta{min-width:auto;}
+      .menu{
+        width:100%;
+        justify-content:flex-start;
+        overflow:auto;
+        padding-bottom:6px;
+        -webkit-overflow-scrolling:touch;
+      }
+      .menu::-webkit-scrollbar{height:6px}
     }
     @media (max-width: 560px){
       .hero-left h1{font-size: 38px;}
@@ -531,12 +424,12 @@
       .grid{grid-template-columns: 1fr;}
       .brand .name{font-size: 16px;}
       .btn{padding:10px 12px;}
+      .whatsapp-float{width:52px; height:52px;}
     }
   </style>
 </head>
 
 <body>
-  <!-- TOP BAR -->
   <div class="topbar">
     <div class="row">
       <div class="item">
@@ -554,13 +447,11 @@
     </div>
   </div>
 
-  <!-- NAV -->
   <header class="nav">
     <div class="container">
       <div class="inner">
         <div class="brand">
           <div class="logo" title="Logo">
-            <!-- Sube tu logo al repo como: logo.png -->
             <img src="logo.png" alt="Logo ABOGADOSPERU.HOME" onerror="this.style.display='none'">
           </div>
           <div>
@@ -587,69 +478,67 @@
   </header>
 
   <main class="container">
-    <!-- INICIO -->
     <section id="inicio" class="section active">
       <div class="hero">
         <div class="hero-grid">
           <div class="hero-left">
-            <small>Bienvenido(a) a nuestro estudio jurídico</small>
-            <h1>Tu tranquilidad<br>legal comienza<br>aquí.</h1>
+            <div class="kicker"><span class="dot"></span> Estudio jurídico con enfoque estratégico</div>
+            <h1>Tu tranquilidad<br>legal empieza<br>con una buena estrategia.</h1>
             <p>
-              Brindamos asesoría legal con una visión estratégica, comunicación clara y defensa responsable,
-              orientada a proteger los intereses de personas, familias y empresas.
+              Asesoría y defensa legal con comunicación clara, rigor jurídico y decisiones informadas.
+              Protegemos los intereses de personas, familias y empresas con enfoque en resultados.
             </p>
 
             <div class="hero-actions">
-              <button class="btn light" id="ctaAsesoria">
-                Solicitar asesoría
-              </button>
-              <button class="btn" id="ctaServicios">
-                Ver servicios
-              </button>
+              <button class="btn primary" id="ctaAsesoria">Solicitar asesoría</button>
+              <button class="btn soft" id="ctaServicios">Ver servicios</button>
+            </div>
+          </div>
+
+          <div class="hero-right" aria-label="Imagen principal">
+            <div class="hero-badge">
+              <b>Atención personalizada</b>
+              <span>Te guiamos paso a paso: análisis, estrategia y representación en cada etapa del proceso.</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Bloque 3 columnas (como tu referencia) -->
       <div class="tri">
-        <div class="panel">
-          <div class="tri-grid">
-            <div class="tri-card">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M4 20h14M6 18V4h9l3 3v11H6z" /></svg>
-              </div>
-              <h3>Análisis legal</h3>
-              <p>Evaluamos cada caso con rigor jurídico y criterio estratégico.</p>
+        <div class="tri-grid">
+          <div class="tri-card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 2h9l3 3v17H6z"/><path d="M9 9h6"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
             </div>
+            <h3>Análisis legal</h3>
+            <p>Evaluamos tu caso con rigor jurídico y criterio estratégico para decidir bien desde el inicio.</p>
+          </div>
 
-            <div class="tri-card">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M7 7h10M7 12h10M7 17h10"/></svg>
-              </div>
-              <h3>Estrategia clara</h3>
-              <p>Diseñamos planes legales por etapas, con objetivos definidos.</p>
+          <div class="tri-card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
             </div>
+            <h3>Estrategia clara</h3>
+            <p>Diseñamos un plan por etapas, con objetivos definidos y comunicación directa contigo.</p>
+          </div>
 
-            <div class="tri-card">
-              <div class="icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M14 3l7 7-4 4-7-7V3h4zM3 21l7-7"/></svg>
-              </div>
-              <h3>Defensa eficaz</h3>
-              <p>Representación responsable y técnica en cada instancia.</p>
+          <div class="tri-card">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2l7 7-7 7-7-7z"/><path d="M5 21h14"/></svg>
             </div>
+            <h3>Defensa eficaz</h3>
+            <p>Representación responsable y técnica, cuidando cada detalle en cada instancia del proceso.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SOBRE NOSOTROS -->
     <section id="sobre" class="section">
       <div class="title">
         <h2>¿Quiénes somos?</h2>
         <p>
-          Contamos con un bufete de abogados especializados en brindar soluciones legales a personas,
-          familias y empresas, con visión estratégica, compromiso total y enfoque en resultados.
+          Bufete de abogados enfocado en soluciones claras y estrategias sólidas para personas,
+          familias y empresas, con compromiso total y ética profesional.
         </p>
       </div>
 
@@ -658,9 +547,8 @@
           <div class="pad">
             <h3>ABOGADOSPERU.HOME</h3>
             <p>
-              Te acompañamos desde la asesoría inicial hasta la representación en juicio, con atención personalizada,
-              ética profesional y comunicación clara. Nuestro objetivo es proteger tus intereses con decisiones
-              informadas y estrategias sólidas.
+              Te acompañamos desde la asesoría inicial hasta la representación en juicio con atención personalizada,
+              comunicación directa y decisiones informadas.
             </p>
             <p><b>Áreas que atendemos:</b></p>
             <ul>
@@ -674,16 +562,15 @@
 
         <div class="about-card">
           <div class="about-visual">
-            <div class="shot s1" aria-label="Imagen 1"></div>
-            <div class="shot s2" aria-label="Imagen 2"></div>
-            <div class="shot s3" aria-label="Imagen 3"></div>
-            <div class="shot s4" aria-label="Imagen 4"></div>
+            <div class="shot s1"></div>
+            <div class="shot s2"></div>
+            <div class="shot s3"></div>
+            <div class="shot s4"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICIOS -->
     <section id="servicios" class="section">
       <div class="title">
         <h2>Servicios</h2>
@@ -692,86 +579,49 @@
 
       <div class="services-bg">
         <div class="grid">
-          <!-- Familia -->
           <div class="card">
             <div class="sicon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M7 12a4 4 0 118 0" />
-                <path d="M5 20a7 7 0 0114 0" />
-              </svg>
+              <svg viewBox="0 0 24 24"><path d="M7 12a4 4 0 118 0"/><path d="M5 20a7 7 0 0114 0"/></svg>
             </div>
             <h3>Derecho de Familia</h3>
-            <p>Divorcio, tenencia, régimen de visitas, alimentos, adopciones y violencia familiar.</p>
+            <p>Divorcio, tenencia, visitas, alimentos, adopciones y violencia familiar.</p>
           </div>
 
-          <!-- Civil -->
           <div class="card">
             <div class="sicon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M4 20h16" />
-                <path d="M6 20V9l6-5 6 5v11" />
-                <path d="M10 20v-6h4v6" />
-              </svg>
+              <svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M6 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/></svg>
             </div>
             <h3>Derecho Civil</h3>
             <p>Contratos, obligaciones, propiedad, sucesiones y responsabilidad civil.</p>
           </div>
 
-          <!-- Penal -->
           <div class="card">
             <div class="sicon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M9 9l6 6" />
-                <path d="M15 9l-6 6" />
-                <path d="M7 4h10l2 4-2 4H7L5 8l2-4z" />
-                <path d="M7 12v8h10v-8" />
-              </svg>
+              <svg viewBox="0 0 24 24"><path d="M9 9l6 6"/><path d="M15 9l-6 6"/><path d="M7 4h10l2 4-2 4H7L5 8l2-4z"/><path d="M7 12v8h10v-8"/></svg>
             </div>
             <h3>Derecho Penal</h3>
             <p>Defensa y representación en procesos penales con rigor técnico y estrategia.</p>
           </div>
 
-          <!-- Mercantil y Corporativo -->
           <div class="card">
             <div class="sicon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M4 7h16" />
-                <path d="M6 7v13h12V7" />
-                <path d="M9 11h6" />
-                <path d="M9 15h6" />
-              </svg>
+              <svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M6 7v13h12V7"/><path d="M9 11h6"/><path d="M9 15h6"/></svg>
             </div>
             <h3>Mercantil y Corporativo</h3>
             <p>Constitución de empresas, contratos comerciales, asesoría y cumplimiento.</p>
           </div>
 
-          <!-- Estado -->
           <div class="card">
             <div class="sicon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M4 10h16" />
-                <path d="M6 10v10" />
-                <path d="M18 10v10" />
-                <path d="M9 20v-6" />
-                <path d="M15 20v-6" />
-                <path d="M12 3l8 7H4l8-7z" />
-              </svg>
+              <svg viewBox="0 0 24 24"><path d="M4 10h16"/><path d="M6 10v10"/><path d="M18 10v10"/><path d="M9 20v-6"/><path d="M15 20v-6"/><path d="M12 3l8 7H4l8-7z"/></svg>
             </div>
             <h3>Derecho con el Estado</h3>
             <p>Contrataciones públicas, procedimientos administrativos y controversias.</p>
           </div>
 
-          <!-- Procesal -->
           <div class="card">
             <div class="sicon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M8 4h8" />
-                <path d="M10 4v6l-4 2" />
-                <path d="M14 4v6l4 2" />
-                <path d="M7 22h10" />
-                <path d="M9 22c-1-3-1-6 3-8" />
-                <path d="M15 22c1-3 1-6-3-8" />
-              </svg>
+              <svg viewBox="0 0 24 24"><path d="M8 4h8"/><path d="M10 4v6l-4 2"/><path d="M14 4v6l4 2"/><path d="M7 22h10"/><path d="M9 22c-1-3-1-6 3-8"/><path d="M15 22c1-3 1-6-3-8"/></svg>
             </div>
             <h3>Derecho Procesal</h3>
             <p>Estrategia y conducción del proceso judicial en cada etapa e instancia.</p>
@@ -780,7 +630,6 @@
       </div>
     </section>
 
-    <!-- CONTACTO -->
     <section id="contacto" class="section">
       <div class="title">
         <h2>Contacto</h2>
@@ -791,10 +640,7 @@
         <div class="contact">
           <div class="contact-left">
             <h3>¿Necesita asesoría legal?</h3>
-            <p>
-              Estamos para atender sus consultas y brindarle la mejor orientación legal.
-              Atención personalizada y enfoque en resultados.
-            </p>
+            <p>Estamos para atender sus consultas y brindarle la mejor orientación legal.</p>
 
             <div class="contact-item">
               <div class="cicon" aria-hidden="true">
@@ -828,8 +674,8 @@
           </div>
 
           <div class="contact-right">
-            <h3>Envíenos un mensaje:</h3>
-            <p>Complete el formulario y uno de nuestros especialistas se comunicará con usted a la brevedad.</p>
+            <h3>Envíenos un mensaje</h3>
+            <p>Complete el formulario y nos comunicaremos a la brevedad.</p>
 
             <form id="formContact">
               <div class="row2">
@@ -866,21 +712,17 @@
               </div>
             </form>
           </div>
-
         </div>
       </div>
     </section>
 
     <footer>
-      <div class="container">
-        © <span id="year"></span> ABOGADOSPERU.HOME — Todos los derechos reservados.
-      </div>
+      © <span id="year"></span> ABOGADOSPERU.HOME — Todos los derechos reservados.
     </footer>
   </main>
 
-  <!-- WhatsApp flotante (logo oficial en SVG) -->
+  <!-- WhatsApp flotante -->
   <a id="waBtn" class="whatsapp-float" href="https://wa.me/51999999999" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <!-- WhatsApp icon (official-style mark, SVG) -->
     <svg viewBox="0 0 32 32" aria-hidden="true">
       <path d="M19.11 17.22c-.25-.13-1.45-.71-1.67-.79-.22-.08-.39-.13-.56.13-.17.25-.64.79-.78.95-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.75-.67-1.25-1.49-1.4-1.74-.15-.25-.02-.38.11-.51.11-.11.25-.29.38-.43.13-.14.17-.25.25-.41.08-.17.04-.32-.02-.45-.06-.13-.56-1.35-.77-1.85-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.45.06-.69.32-.24.25-.9.88-.9 2.14 0 1.26.92 2.48 1.04 2.65.13.17 1.81 2.77 4.39 3.88.61.26 1.08.41 1.45.53.61.19 1.16.16 1.6.1.49-.07 1.45-.59 1.66-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.29z"/>
       <path d="M26.67 15.98c0 5.89-4.79 10.67-10.67 10.67-1.88 0-3.71-.49-5.31-1.42L5.33 26.67l1.48-5.2a10.6 10.6 0 0 1-1.48-5.49C5.33 10.09 10.11 5.33 16 5.33s10.67 4.76 10.67 10.65zm-10.67-8.7c-4.8 0-8.7 3.9-8.7 8.7 0 1.74.52 3.44 1.52 4.9l.15.22-.87 3.08 3.15-.83.21.13c1.42.93 3.07 1.42 4.77 1.42 4.8 0 8.7-3.9 8.7-8.7 0-4.8-3.9-8.92-8.93-8.92z"/>
@@ -888,15 +730,13 @@
   </a>
 
   <script>
-    // ===== CONFIGURA TUS DATOS AQUÍ =====
     const CONFIG = {
       phone: "+51 999 999 999",
       email: "abogadosperu.home@gmail.com",
       address: "Lima – Perú",
-      whatsappNumber: "51999999999" // SOLO números, ejemplo: 51977800500
+      whatsappNumber: "51999999999"
     };
 
-    // Pintar datos en la web
     document.getElementById("topPhone").textContent = CONFIG.phone;
     document.getElementById("topEmail").textContent = CONFIG.email;
     document.getElementById("topAddress").textContent = CONFIG.address;
@@ -905,14 +745,9 @@
     document.getElementById("contactEmail").textContent = CONFIG.email;
     document.getElementById("contactAddress").textContent = CONFIG.address;
 
-    // WhatsApp link
-    const waBtn = document.getElementById("waBtn");
-    waBtn.href = "https://wa.me/" + CONFIG.whatsappNumber;
-
-    // Año footer
+    document.getElementById("waBtn").href = "https://wa.me/" + CONFIG.whatsappNumber;
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Navegación: SOLO una sección visible
     const links = document.querySelectorAll(".menu button");
     const sections = document.querySelectorAll(".section");
 
@@ -924,12 +759,10 @@
 
     links.forEach(b => b.addEventListener("click", () => activate(b.dataset.go)));
 
-    // Botones CTA
-    document.getElementById("ctaAsesoria").addEventListener("click", () => activate("contacto"));
     document.getElementById("btnInfo").addEventListener("click", () => activate("contacto"));
+    document.getElementById("ctaAsesoria").addEventListener("click", () => activate("contacto"));
     document.getElementById("ctaServicios").addEventListener("click", () => activate("servicios"));
 
-    // Form demo (no envía a correo real, solo muestra aviso)
     document.getElementById("formContact").addEventListener("submit", (e) => {
       e.preventDefault();
       alert("Mensaje enviado (demo). Luego lo conectamos a correo o WhatsApp.");
